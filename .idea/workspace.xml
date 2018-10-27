@@ -1,7 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f24fba31-5979-4dc9-8393-78e49b4d13c2" name="Default Changelist" comment="" />
+    <list default="true" id="f24fba31-5979-4dc9-8393-78e49b4d13c2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/params" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/collectors/params" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/collectors/runTest.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/collectors/runTest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/customer/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/customer/projectsTest/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/customer/projectsTest/modulesTest/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/customer/projectsTest/modulesTest/collectors/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/customer/projectsTest/modulesTest/collectors/getTest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/customer/projectsTest2/modulesSW/collectors/params" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/customer/projectsTest2/modulesSW/collectors/runTest.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/customer/projectsTest2/modulesSW/collectors/runTest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/customerCaleb/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/customerCaleb/projectsHR/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/customerCaleb/projectsHR/modulesDwight/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/customerCaleb/projectsHR/modulesDwight/collectors/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/customerCaleb/projectsHR/modulesDwight/collectors/getDwightInfo.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/customerDavid/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/customerDavid/projectsSW/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/customerDavid/projectsSW/modulesFirstOne/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ensnare.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ensnare.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/run_all.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin/run_all.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/run_sub.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin/run_sub.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/set_params.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin/set_params.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,39 +41,47 @@
     <session id="-241844947">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.0" value="2" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="4" />
+          <entry key="bat" value="2" />
+          <entry key="params" value="4" />
+          <entry key="py" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="4" />
+          <entry key="PLAIN_TEXT" value="6" />
+          <entry key="Python" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="2570" />
+          <entry key="dummy" value="13" />
+          <entry key="params" value="251" />
+          <entry key="py" value="6631" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="2570" />
+          <entry key="PLAIN_TEXT" value="264" />
+          <entry key="Python" value="6631" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/run_all.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="28" column="42" lean-forward="true" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
+            <state relative-caret-position="119">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -52,19 +89,72 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin/run_sub.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="40" column="12" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
+            <state relative-caret-position="183">
+              <caret line="113" column="67" selection-start-line="113" selection-start-column="67" selection-end-line="113" selection-end-column="67" />
               <folding>
-                <element signature="e#0#9#0" expanded="true" />
-                <marker date="1540020255873" expanded="true" signature="1041:1042" ph="..." />
+                <marker date="1540663649474" expanded="true" signature="1093:1436" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bin/set_params.py">
+        <entry file="file://$PROJECT_DIR$/data/customer/projectsTest2/modulesSW/collectors/params">
           <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/customer/projectsTest/modulesTest/collectors/getTest.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testing.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/collectors/runTest.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/collectors/runTest.bat">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/collectors/params">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/params">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/set_params.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -76,27 +166,67 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>_caleb</find>
+      <find>ord(</find>
+      <find>set_</find>
+      <find>run_</find>
+      <find>fnm</find>
+      <find>path</find>
+      <find>bin_wd</find>
+      <find>extensions</find>
+      <find>run</find>
+      <find>struc</find>
+      <find>folders</find>
+      <find>cd</find>
+      <find>will run</find>
+      <find>error</find>
+      <find>processFol</find>
+      <find>run_sub</find>
+      <find>set</find>
+      <find>param</find>
+      <find>running</find>
+      <find>check</find>
+      <find>depth</find>
+      <find>getFolder</find>
+      <find>checking if</find>
+      <find>collo</find>
+      <find>coll</find>
+      <find>SW2</find>
+      <find>sw2</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/bin/_init_.py" />
-        <option value="$PROJECT_DIR$/bin/run_all.py" />
         <option value="$PROJECT_DIR$/bin/set_params.py" />
+        <option value="$PROJECT_DIR$/bin/params" />
+        <option value="$PROJECT_DIR$/data/collectors/params" />
+        <option value="$PROJECT_DIR$/data/costomer.py" />
+        <option value="$PROJECT_DIR$/data/customer/projectsTest/modulesTest/getTest.py" />
+        <option value="$PROJECT_DIR$/testing.py" />
+        <option value="$PROJECT_DIR$/bin/run_all.py" />
         <option value="$PROJECT_DIR$/bin/run_sub.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="949" />
-    <option name="width" value="980" />
-    <option name="height" value="1031" />
+    <option name="x" value="-12" />
+    <option name="y" value="24" />
+    <option name="width" value="981" />
+    <option name="height" value="1032" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -111,17 +241,37 @@
             </path>
             <path>
               <item name="ensnare" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="ensnare" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ensnare" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ensnare" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="customer" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\caleb_l4ac0rz\HITS\ensnare\data\customerDavid" />
+      <recent name="C:\Users\caleb_l4ac0rz\HITS\ensnare\data\customerCaleb" />
+      <recent name="C:\Users\caleb_l4ac0rz\HITS\ensnare\data\customer\projectsTest\modulesTest\collector" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\caleb_l4ac0rz\HITS\ensnare\data\customer\projectsTest2\modulesSW" />
+      <recent name="C:\Users\caleb_l4ac0rz\HITS\ensnare\data\customerDavid\projectsSW\modulesFirstOne" />
+      <recent name="C:\Users\caleb_l4ac0rz\HITS\ensnare\bin" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -178,14 +328,60 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="set_params" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ensnare" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/bin" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bin/set_params.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="testing" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ensnare" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testing.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.run_all" />
       <item itemvalue="Python.run_sub" />
+      <item itemvalue="Python.set_params" />
+      <item itemvalue="Python.testing" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.run_all" />
         <item itemvalue="Python.run_sub" />
+        <item itemvalue="Python.testing" />
+        <item itemvalue="Python.set_params" />
       </list>
     </recent_temporary>
   </component>
@@ -212,23 +408,22 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24960254" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23052464" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" weight="0.3291815" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3291815" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32890365" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.42358804" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39679715" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3291815" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3291815" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -241,23 +436,84 @@
     <entry file="file://$PROJECT_DIR$/bin/_init_.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/run_all.py">
+    <entry file="file://$USER_HOME$/Anaconda3/Lib/os.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="28" column="42" lean-forward="true" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
+        <state relative-caret-position="11322">
+          <caret line="668" selection-start-line="668" selection-end-line="668" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Google Drive/TAMU classes/engr 102/Lab7b/Program 1 - pig latin.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/params">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/collectors/params">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/set_params.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/collectors/runTest.bat">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/collectors/runTest.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/costomer.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/customer/projectsTest/modulesTest/test.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/customer/projectsTest/modulesTest/collectors/getTest.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/customerCaleb/projectsHR/modulesDwight/collectors/getDwightInfo.bat">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/customerDavid/projectsSW/modulesFirstOne/collectors/params">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/run_all.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/customer/projectsTest2/modulesSW/collectors/params">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/run_sub.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="40" column="12" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
+        <state relative-caret-position="183">
+          <caret line="113" column="67" selection-start-line="113" selection-start-column="67" selection-end-line="113" selection-end-column="67" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <marker date="1540020255873" expanded="true" signature="1041:1042" ph="..." />
+            <marker date="1540663649474" expanded="true" signature="1093:1436" ph="..." />
           </folding>
         </state>
       </provider>
