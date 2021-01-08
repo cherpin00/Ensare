@@ -25,20 +25,25 @@ import os
 import configparser
 
 
-def run(cmd):
-    print("cmd:",cmd)
-    p = Popen(cmd.split(" "), stdout=PIPE, stderr=PIPE)
+def run(cmdArr):
+    print("cmd:",cmdArr)
+    p = Popen(cmdArr, stdout=PIPE, stderr=PIPE)
     out, err = p.communicate()
+    if len(err.decode()) > 0:
+        print("cmd error:", err.decode())
     return out.decode()
 
 def gitSaveDiff(filename):
     with open(filename, "w") as f:
-        f.write(run("git diff head head~1 ."))
+        cmd = ["git", "diff", "head", "head~1", "."]
+        f.write(run(cmd))
 
 def gitCommit():
     reldir = os.path.join(os.getcwd(), "..")
-    run(f"git add {reldir}")
-    run(f'git commit ../. -m "Ensnare auto commit. {os.sep.join(reldir.split(os.sep)[:-2])}{os.sep}"')
+    cmd = ["git", "add", reldir]
+    run(cmd)
+    cmd = ["git", "commit", "../.", "-m", f"Ensnare auto commit. {os.sep.join(reldir.split(os.sep)[:-2])}{os.sep}"]
+    run(cmd)
 
 def set_params(filename):
     config = configparser.ConfigParser()
@@ -190,7 +195,7 @@ if depth > len(structure) - 1:
         gitCommit()
         sleep(1)
         filename = f"{os.sep.join(tempFolder.split(os.sep)[:-1])}"
-        gitSaveDiff(filename.replace(os.sep, "__"))
+        gitSaveDiff(os.path.join(os.environ["reportsFolder"], filename.replace(os.sep, "__")))
 else:
     for file in os.listdir(os.getcwd()):
         if os.path.isfile(file) and file != param_filename:

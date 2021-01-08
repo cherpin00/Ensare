@@ -12,7 +12,7 @@ reports_wd = os.path.join(top_wd, "reports")
 os.chdir(data_wd)    #change to ../data
 if not os.path.exists(reports_wd):
     raise RuntimeError(f"Reports folder, {reports_wd} does not exist.")
-os.environ["reportFolder"] = reports_wd
+os.environ["reportsFolder"] = reports_wd
 
 
 
