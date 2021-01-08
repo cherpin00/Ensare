@@ -5,11 +5,20 @@ import myLib
 
 stop_on_error = False
 
-bin_wd = os.getcwd()
-os.chdir('../data')
+top_wd = os.path.abspath("..")
+bin_wd = os.path.join(top_wd, "bin")
+data_wd = os.path.join(top_wd, "data")
+reports_wd = os.path.join(top_wd, "reports")
+os.chdir(data_wd)    #change to ../data
+if not os.path.exists(reports_wd):
+    raise RuntimeError(f"Reports folder, {reports_wd} does not exist.")
+os.environ["reportFolder"] = reports_wd
+
+
 
 structure = ['customer*', 'projects*', 'modules*']
-excc_extensions = ['.bat', '.exe', '.py']
+excc_extensions = ['.bat', '.exe']
+# excc_extensions = ['.bat', '.exe', '.py']
 
 strStructure = ''
 for i in structure:
@@ -37,7 +46,8 @@ if x != 0 and stop_on_error:
 # os.system("cd .. && dir")
 # os.system("dir")
 
-print("run all just ran")
+print("Finished collecting all.")
+
 
 
 

@@ -42,6 +42,6 @@ def factorial(num):
     if num != 0:
         fact = factorial(num-1)
     else:
-        fact = factorial(1)
+        return 1
 
 print(factorial(5))
