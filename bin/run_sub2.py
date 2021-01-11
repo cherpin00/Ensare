@@ -5,41 +5,17 @@ import myLib
 import sys
 import configparser
 import logging
+import coloredlogs
 import multiprocessing
+
+from sql import getSession
 
 ABORTONERROR = True
 RED = "\033[1;31;200m"
 YELLOW = '\033[1;32;200m'
 
-# from run_all import structure
-# from run_all import counter
-
-
-# structureValue = structure[counter]
-# command = "cd" + " " + structure[counter] + " ", "&& python run_sub.py "
-#
-# if structureValue[len(structureValue)-1] == "*":
-#     print(command)
-#     os.system(command)
-# else:
-#     os.system("cd && python run_all.py")
-
-
-# class Process(multiprocessing.Process):
-#     def run(self):
-#         try:
-#             multiprocessing.Process.run(self)
-#             self._cconn.send(None)
-#         except Exception as e:
-#             tb = sys.tracebacklimit.format_exc()
-#             self._cconn.send((e, tb))
-#             # raise e  # You can still rise this exception if you need to
-
-#     @property
-#     def exception(self):
-#         if self._pconn.poll():
-#             self._exception = self._pconn.recv()
-#         return self._exception
+logger = logging.getLogger(__name__)
+coloredlogs.install(level=logging.DEBUG)
 
 def run(cmdArr):
     print("cmd:",cmdArr)
@@ -70,21 +46,6 @@ def set_params(filename):
     config.read_string(iniStr)
     for param_key in config[default]:
         os.environ[param_key] = config[default][param_key]
-    # with open(filename) as file:
-    #     for line in file:
-    #         #print("line=", line)
-    #         if line.lstrip().startswith('#'):
-    #             continue
-    #         if line.lstrip().startswith('//'):
-    #             continue
-    #         if line.lstrip().replace(chr(10),"") == "":
-    #             continue
-    #         try:
-    #             key, value = line.strip().split('=', 1)
-    #         except:
-    #             raise Exception("An error occurred reading parameters from filename, " + filename + ".  Line the failed:" + line)
-    #         os.environ[key] = value
-
 
 def getFolderList(parentFolderName, startsWith):
     retFolders=[]
@@ -192,25 +153,34 @@ def runSub(depth:int, structure:list, excc_extensions:list, folder:str = None):
                     print(colorString(os.getcwd() + dataDir + " does not exist. Not running collectors", RED))
                 # ret = os.system("echo off &&" + tempFolder + file + ">" + file + ".txt 2>&1") #TODO: Call extension type with correct interpreter
                 if ext in programs:
+                    error_occurred = False
                     prog = programs[ext]
                     cmd = " ".join([prog, tempFolder + file, ">", file + ".txt"]).strip() #Strip out space at front if there is no prog to run the file with
-                    p = Popen(cmd.split(" "), stderr=PIPE, stdout=PIPE)
-                    out, err = p.communicate()
+                    try:
+                        # p = Popen(cmd.split(" "), stderr=PIPE, stdout=PIPE)
+                        p = Popen(cmd, stderr=PIPE, stdout=PIPE, shell=True) #TODO: Shell is insecure
+                        out, err = p.communicate()
+                        if p.returncode != 0:
+                            # Checks only last returned value of collector.bat file
+                            # TODO: To properly determine if error exsists - rederect error to diffrent file and if error file is empty no error otherwise there is an error
+                            error_occurred = True
+                    except Exception as e:
+                        error_occurred = True
+                        err = e
+                        out = "Error occurred executing getter"
+                    if error_occurred:
+                        print(f"Command ran: {cmd}")
+                        print(f"Stdout: {out}")
+                        print(f"Stderr: {err}")
+                        if ABORTONERROR:
+                            raise Exception("get returned error, aborting module...")
+                        else:
+                            print(colorString("Warning get returned an error but abort on error = False", RED))
                 else:
                     print("Do not know what program to use for extension", ext)
                     continue
                 #TODO: Use env variable flag to ignore stderr or not
                 #TODO: Add flag: redirectStderr for collectors
-                # os.system("pause")
-                if p.returncode != 0:
-                    print(f"Stdout: {out}")
-                    print(f"Stderr: {err}")
-                    # Checks only last returned value of collector.bat file
-                    # TODO: To properly determine if error exsists - rederect error to diffrent file and if error file is empty no error otherwise there is an error
-                    if ABORTONERROR:
-                        raise Exception("get returned error, aborting module...")
-                    else:
-                        print(colorString("Warning get returned an error but abort on error = False", RED))
             # print("params after get's run")
             # os.system("set wd && pause")
             gitCommit()
@@ -249,10 +219,20 @@ def runSub(depth:int, structure:list, excc_extensions:list, folder:str = None):
         #             print(colorString(f"WARNING: Folder ignored, not in defined dir structure.", RED), f)
         #     startSubProcess(depth+1, structure, excc_extensions, structure[depth])
 
-        
+
+
+def send_emails():
+    print("Sending emails.")
+    path = os.environ["reportsFolder"]
+    files = os.listdir(".")
+    for f in files:
+        if not os.path.isfile(f):
+            logging.warning(f"{f} is not a file. Skipping.")
+        print(f)
+
+
 
 if __name__ == "__main__":
-    stop_on_error = False
 
     top_wd = os.path.abspath("..")
     bin_wd = os.path.join(top_wd, "bin")
@@ -263,22 +243,13 @@ if __name__ == "__main__":
         raise RuntimeError(f"Reports folder, {reports_wd} does not exist.")
     os.environ["reportsFolder"] = reports_wd
 
-
+    sqlSession = getSession()
+    exit()
 
     structure = ['customer*', 'projects*', 'modules*']
-    excc_extensions = ['.bat', '.exe']
-    # excc_extensions = ['.bat', '.exe', '.py']
-
-    strStructure = ''
-    for i in structure:
-        strStructure = strStructure + ',' + i
-    strStructure = strStructure.replace(',', "", 1)
-
-    strExtensions = ''
-    for i in excc_extensions:
-        strExtensions = strExtensions + ',' + i
-    strExtensions = strExtensions.replace(',', "", 1)
-
-
+    excc_extensions = ['.bat', '.exe', '.py']
     element = 0
     runSub(element, structure, excc_extensions)
+
+    print("Finished running collectors.")
+    send_emails()
