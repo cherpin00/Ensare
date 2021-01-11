@@ -44,8 +44,6 @@ def factorial(num):
     else:
         return 1
 
-print(factorial(5))
-
 def sendEmail(receivers, subject, body, filename=None, sender="herpintech@gmail.com"):
 	import smtplib
 

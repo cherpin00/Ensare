@@ -40,11 +40,11 @@ def getSession():
     return DBSession()
 
 def run(cmdArr):
-    logger.debug("cmd:",cmdArr)
+    logger.debug("cmd:" + " ".join(cmdArr))
     p = Popen(cmdArr, stdout=PIPE, stderr=PIPE)
     out, err = p.communicate()
     if len(err.decode()) > 0:
-        logger.debug("cmd error:", err.decode())
+        logger.debug("cmd error:" + err.decode())
     return out.decode()
 
 def gitSaveDiff(filename):
@@ -77,8 +77,9 @@ def getFolderList(parentFolderName, startsWith):
         if folder[:len(startsWith)] == startsWith:
             retFolders.append(folder)
         else:#TODO: need to use logging module
-            logger.warning(f"WARNING: Folder ignored, does not start with {startsWith}" + os.path.join(parentFolderName, folder))
-    print("the folders in", parentFolderName, 'that start with', startsWith, 'are', retFolders)
+            p = os.path.join(parentFolderName, folder)
+            logger.warning(f"WARNING: Folder ignored, does not start with {startsWith} {p}")
+    logger.info(f"the folders in {parentFolderName} that start with startsWith are {retFolders}")
     return retFolders
 
 
@@ -129,16 +130,16 @@ def runSub(depth:int, structure:list, excc_extensions:list, folder:str = None, r
         msg="past end of structure"
     else:
         msg= 'on ' + structure[depth]
-    print('PID:', os.getpid())
-    print('depth', depth)
-    print('structure', structure, msg)
-    print("ext", excc_extensions)
+    logger.debug(f'PID: {os.getpid()}')
+    logger.debug(f'depth {depth}')
+    logger.debug(f'structure {structure} {msg}')
+    logger.debug(f"ext {excc_extensions}")
 
     if os.path.exists(param_filename):
-        print(f"Processing params file, {param_filename}.")
+        logger.info(f"Processing params file, {param_filename}.")
         set_params(param_filename)
     else:
-        print("No", param_filename, "exists in", os.getcwd())
+        logger.warning("No " + param_filename + " exists in " + os.getcwd())
 
     currentFolder = os.getcwd() + os.sep
     collected_filename = f"{os.sep.join(currentFolder.split(os.sep)[1:])}".replace(baseDir, "")
@@ -146,17 +147,15 @@ def runSub(depth:int, structure:list, excc_extensions:list, folder:str = None, r
 
     if depth > len(structure) - 1:
         try:
-            print("changing to collectors")
             os.chdir('collectors')
-            print("current folder is", os.getcwd())
+            logger.debug("current folder is" + os.getcwd())
         except:
-            print(colorString(f"ERROR: missing collectors with get* files. Deepest folder must be named collectors.", RED), os.getcwd())
+            logger.error(f"ERROR: missing collectors with get* files. Deepest folder must be named collectors." + os.getcwd())
             return #  Note if the code coninues to run it will still check for get files and run those. This might not be bad if the user frogot to make a collocter folder
             # raise Exception('error was:' + sys.exc_infor()[0])
         number_of_collectors = 0
         if runCollectors:
             for file in os.listdir(os.getcwd()):
-                print("checking the file", file)
                 isGood = False
                 ext = None
                 for x in excc_extensions:
@@ -168,12 +167,12 @@ def runSub(depth:int, structure:list, excc_extensions:list, folder:str = None, r
                     continue
                 else:
                     tempSting = "will run " + currentFolder + file
-                    print(colorString(tempSting, YELLOW)) #  TODO if the file with the right extension is found change to data and run the get file
+                    logger.debug(tempSting)
                     dataDir = str(os.path.join("..", "data"))
                     try:
                         os.chdir(dataDir)
                     except:
-                        print(colorString(os.getcwd() + dataDir + " does not exist. Not running collectors", RED))
+                        logger.warning(str(os.getcwd() + dataDir + " does not exist. Not running collectors"))
                     # ret = os.system("echo off &&" + tempFolder + file + ">" + file + ".txt 2>&1") #TODO: Call extension type with correct interpreter
                     if ext in programs:
                         error_occurred = False
@@ -192,35 +191,33 @@ def runSub(depth:int, structure:list, excc_extensions:list, folder:str = None, r
                             err = e
                             out = "Error occurred executing getter"
                         if error_occurred:
-                            print(f"Command ran: {cmd}")
-                            print(f"Stdout: {out}")
-                            print(f"Stderr: {err}")
+                            logger.error(f"Error on command: {cmd}")
+                            logger.error(f"Stdout: {out}")
+                            logger.error(f"Stderr: {err}")
                             if ABORTONERROR:
                                 raise Exception("get returned error, aborting module...")
                             else:
-                                print(colorString("Warning get returned an error but abort on error = False", RED))
+                                logger.warning("Warning get returned an error but abort on error = False")
                         else:
                             number_of_collectors += 1
                     else:
-                        print("Do not know what program to use for extension", ext) #TODO: Maybe throw an error on this.
+                        logger.error(f"Cannot find program for extension {ext}")
+                        if ABORTONERROR:
+                            raise RuntimeError("See error message above")
                         continue
                     #TODO: Use env variable flag to ignore stderr or not
                     #TODO: Add flag: redirectStderr for collectors
-                # print("params after get's run")
-                # os.system("set wd && pause")
                 gitCommit()
                 gitSaveDiff(os.path.join(os.environ["reportsFolder"], collected_filename))
         else:
-            print("Skipping collectors because of flag.")
+            logger.info("Skipping collectors because of flag.")
         if number_of_collectors > 0 or not runCollectors:
             session = getSession()
             start = "notify"
             for key in os.environ:
-                # print(key, os.environ[key])
-                # os.system("pause")
                 if key[:len(start)] == start.upper(): #We expect all env variable to be upper case
                     email = os.environ[key]
-                    print(f"Adding {key}'s email ({email}) to the email list.")
+                    logger.debug(f"Adding {key}'s email ({email}) to the email list.")
                     n = Notify(
                         name=key, 
                         email=email, 
@@ -232,17 +229,18 @@ def runSub(depth:int, structure:list, excc_extensions:list, folder:str = None, r
     else:
         for file in os.listdir(os.getcwd()):
             if os.path.isfile(file) and file != param_filename:
-                print(colorString(f"WARNING: File ignored, it is not at the end of dir structure.", RED), os.path.join(os.getcwd(), file))
+                p = os.path.join(os.getcwd(), file)
+                logger.warning(f"WARNING: File ignored, it is not at the end of dir structure. {p}")
         
         folders = getFolderList(os.getcwd(), structure[depth][:-1])
         newFolder = ""
         for f in folders:
             if structure[depth][-1] == "*":
-                print("trying to change to", f)
+                logger.debug("trying to change to " + f)
                 newFolder = f
             else:
                 if structure[depth] != f and not os.path.isfile(f):
-                    print(colorString(f"WARNING: Folder ignored, not in defined dir structure.", RED), f)
+                    logger.warning(f"WARNING: Folder ignored, not in defined dir structure." + f)
                     continue
                 newFolder = structure[depth]
             p = multiprocessing.Process(target=runSub, args=(depth+1, structure, excc_extensions, newFolder, runCollectors, startTime, baseDir))
