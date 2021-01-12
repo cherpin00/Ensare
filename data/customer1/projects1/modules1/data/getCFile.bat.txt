@@ -1,14 +1,14 @@
 
-(venv) C:\Users\caleb\code\code\HITS\Ensnare\data\customer1\projects1\modules1\data>set wd 
+(venv) C:\Data\clients\Rudd\programming\Ensnare\data\customer1\projects1\modules1\data>set wd 
 WDEMAIL=caleb
 
-(venv) C:\Users\caleb\code\code\HITS\Ensnare\data\customer1\projects1\modules1\data>set logFile=getCFile.txt 
+(venv) C:\Data\clients\Rudd\programming\Ensnare\data\customer1\projects1\modules1\data>set logFile=getCFile.txt 
 
-(venv) C:\Users\caleb\code\code\HITS\Ensnare\data\customer1\projects1\modules1\data>type C:\Users\caleb_l4ac0rz\HITS\ensnare.txt 
+(venv) C:\Data\clients\Rudd\programming\Ensnare\data\customer1\projects1\modules1\data>type C:\Users\caleb_l4ac0rz\HITS\ensnare.txt 
 
-(venv) C:\Users\caleb\code\code\HITS\Ensnare\data\customer1\projects1\modules1\data>echo wdEmail: caleb 
+(venv) C:\Data\clients\Rudd\programming\Ensnare\data\customer1\projects1\modules1\data>echo wdEmail: caleb 
 wdEmail: caleb
 
-(venv) C:\Users\caleb\code\code\HITS\Ensnare\data\customer1\projects1\modules1\data>set wdGetCFile=I'm here 
+(venv) C:\Data\clients\Rudd\programming\Ensnare\data\customer1\projects1\modules1\data>set wdGetCFile=I'm here 
 
-(venv) C:\Users\caleb\code\code\HITS\Ensnare\data\customer1\projects1\modules1\data>set x=1 
+(venv) C:\Data\clients\Rudd\programming\Ensnare\data\customer1\projects1\modules1\data>set x=1 
